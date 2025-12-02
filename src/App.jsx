@@ -4,34 +4,33 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Personal from './components/Personal'
 import Education from './components/Education'
-import Experience from './components/Experience'
+import Work from './components/Work'
+import Resume from './components/Resume'
 import { CreateCV, EditCV } from './components/Buttons'
 import DisplayCV from './components/DisplayCV'
 
-function App() {
+import { blank } from './data'
+
+export default function App() {
+    const [personalData, setPersonalData] = useState(blank.personal)
+
   return (
     <>
         <h1>CV Builder</h1>
         <div id="inputCV">
-            <fieldset>
-                <Personal />
-            </fieldset>
-            <fieldset>
+                <Personal handleUpdate={setPersonalData} data={personalData} />
                 <Education />
-                <button>add</button>
-            </fieldset>
-            <fieldset>
-                <Experience />
-                <button>add</button>
-            </fieldset>
+                <Work />
         </div>
-        <button onClick={CreateCV} >Create</button>
+        {/* <button onClick={CreateCV} >Create</button>
         <button onClick={EditCV} >Edit</button>
         <div id="displayCV">
             <DisplayCV />
-        </div>
+        </div> */}
+        <Resume
+            personalData={personalData}
+        />
     </>
   )
 }
 
-export default App

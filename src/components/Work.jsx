@@ -1,6 +1,6 @@
-function Experience(){
+export default function Work(){
     return(
-        <>
+        <fieldset>
         <h2>Personal Info</h2>
             <label htmlFor="companyInput">Company </label>
             <input 
@@ -31,9 +31,9 @@ function Experience(){
                 type="date" 
                  />
             <br />
+            <button>add</button>
             <br />
-        </>
+        </fieldset>
     )
 }
 
-export default Experience

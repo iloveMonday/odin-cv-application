@@ -1,6 +1,6 @@
 function Education(){
    return (
-   <>
+   <fieldset>
     
         <h2>Education</h2>
         <label htmlFor="schoolInput">School </label>
@@ -21,9 +21,10 @@ function Education(){
             placeholder="1999-2999"
             pattern='[0-9]{4}-[0-9]{4}' />
             <br />
+            <button>add</button>
             <br />
     
-    </>
+    </fieldset>
     );
 }
 

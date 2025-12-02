@@ -1,3 +1,15 @@
+# To Do
+[]onclick Create
+-[]populate CV from inputs
+-[]down inputs
+
+[]onClick Edit 
+-[]expand inputs
+-[]populate inputs
+
+
+
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
