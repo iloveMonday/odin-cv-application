@@ -1,35 +1,32 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import Personal from './components/Personal'
 import Education from './components/Education'
 import Work from './components/Work'
 import Resume from './components/Resume'
-import { CreateCV, EditCV } from './components/Buttons'
-import DisplayCV from './components/DisplayCV'
 
 import { blank } from './data'
 
 export default function App() {
     const [personalData, setPersonalData] = useState(blank.personal)
+    const [educationData, setEducationData] = useState(blank.education)
+    const [workData, setWorkData] = useState(blank.work)
 
   return (
     <>
-        <h1>CV Builder</h1>
+    <h1>CV Builder</h1>
+    <div className="container">
         <div id="inputCV">
                 <Personal handleUpdate={setPersonalData} data={personalData} />
-                <Education />
-                <Work />
+                <Education handleUpdate={setEducationData} data={educationData} />
+                <Work handleUpdate={setWorkData} data={workData} />
         </div>
-        {/* <button onClick={CreateCV} >Create</button>
-        <button onClick={EditCV} >Edit</button>
-        <div id="displayCV">
-            <DisplayCV />
-        </div> */}
         <Resume
             personalData={personalData}
+            educationData={educationData}
+            workData={workData}
         />
+    </div>
     </>
   )
 }

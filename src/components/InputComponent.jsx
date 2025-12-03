@@ -3,13 +3,14 @@ export default function InputField({
     id,
     name,
     type = "text",
+    placeholder,
     value,
     onChange,
 }){
     return(
         <div className="input-field">
         <label htmlFor={id}>{label}</label>
-        <input type={type} id={id} name={name} value={value} onChange={onChange} />
+        <input type={type} id={id} name={name} placeholder={placeholder} value={value} onChange={onChange} />
         </div>
     );
 }

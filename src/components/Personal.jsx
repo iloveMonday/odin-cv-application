@@ -1,27 +1,28 @@
-     import { useState } from 'react'
-     import InputField from './InputComponent'
-     import editIcon from "../assets/icons/edit.svg"
+import { useState } from 'react'
+import InputField from './InputComponent'
+import editIcon from "../assets/icons/edit.svg"
+
      
-     export default function Personal({ handleUpdate, data}){
-        const [isActive, setIsActive] = useState(true);
+ export default function Personal({ handleUpdate, data}){
+    const [isActive, setIsActive] = useState(true);
 
-        function handleToggleActive(){
+    function handleToggleActive(){
             setIsActive(!isActive)
-        }
+    }
 
-        function handleSave(e){
+    function handleSave(e){
             e.preventDefault();
             handleToggleActive();
-        }
+    }
 
-        function handleChange(e){
+    function handleChange(e){
             const { name, value } = e.target;
             handleUpdate((prevData) => ({ ...prevData, [name]: value}))
-        }
+    }
 
-     return (
+    return (
         <form className="personal-form" onSubmit={handleSave}>
-     <fieldset>
+        <fieldset>
         <div className="form-title">
             <h2>Personal Info</h2>
             {!isActive && (
@@ -30,7 +31,56 @@
                 </button>
             )}
         </div>
-{/* 
+
+            {isActive && (
+                <>
+                <InputField
+                label="Full name "
+                id="name"
+                name="name"
+                placeholder="belinda pencil"
+                value={data.name}
+                onChange={handleChange}
+                />
+                <InputField
+                label="Email "
+                id="email"
+                name="email"
+                placeholder="helpme@yelpme.com"
+                value={data.email}
+                onChange={handleChange}
+                />
+                <InputField
+                label="Phone "
+                id="phone"
+                name="phone"
+                type="tel"
+                placeholder="508-976-1234"
+                value={data.phone}
+                onChange={handleChange}
+                />
+                <InputField
+                label="Location "
+                id="location"
+                name="location"
+                placeholder="Worcester, MA"
+                value={data.location}
+                onChange={handleChange}
+                />
+                <div className="button-div">
+                    <button type="submit" className="form-button">
+                        Save
+                    </button>
+                </div>
+                </>
+            )}
+            <br />
+      </fieldset>
+      </form>
+      )
+
+
+      {/* 
         <label htmlFor="nameInput">Name </label>
         <input 
             type="text" 
@@ -53,47 +103,4 @@
             <label htmlFor="locationInput">Location </label>
         <input 
             type="text"  /> */}
-
-            {isActive && (
-                <>
-                <InputField
-                label="Full name "
-                id="name"
-                name="name"
-                value={data.name}
-                onChange={handleChange}
-                />
-                <InputField
-                label="Email "
-                id="email"
-                name="email"
-                value={data.email}
-                onChange={handleChange}
-                />
-                <InputField
-                label="Phone "
-                id="phone"
-                name="phone"
-                value={data.phone}
-                onChange={handleChange}
-                />
-                <InputField
-                label="Location "
-                id="location"
-                name="location"
-                value={data.location}
-                onChange={handleChange}
-                />
-                <div className="button-div">
-                    <button type="submit" className="form-button">
-                        Save
-                    </button>
-                </div>
-                </>
-            )}
-            <br />
-      </fieldset>
-      </form>
-      )
-
     }

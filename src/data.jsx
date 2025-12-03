@@ -5,8 +5,18 @@ const blank = {
         phone: "",
         location: "",
     },
-    education: [],
-    work: [],
+    education: {
+        school: "",
+        major: "",
+        years: "",
+    },
+    work: {
+        company: "",
+        title: "",
+        description: "",
+        startDate: "",
+        ednDate: "",
+    },
 };
 
 
