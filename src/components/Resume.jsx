@@ -37,43 +37,36 @@ function PersonalSection({ data }){
 
 function EducationSection({data}){
     const school = data.school;
-    const years = data.years;
+    const year= data.years;
     const major = data.major;
     
     return (
         <section className="education">
-            <h2>Education</h2>
+            {school && <h2>Education</h2>}
             <div className="school">
                 <p>{school}</p>
                 <p>{major}</p>
-                <p>{years}</p>
+                <p>{year}</p>
             </div>
-            {/* <div className="major">
-                
-            </div>
-            <div className="year">
-                
-            </div> */}
         </section>)
 }
 
 function WorkSection({data}){
     const company = data.company;
     const title = data.title;
-    const desc = data.desc;
-    const startDate = data.startDate;
+    const desc = data.description;
+    const startDate = data.startDate
     const endDate = data.endDate;
 
     return (
         <section className="work">
-            <h2>Experience</h2>
+            {company && <h2>Experience</h2>}
             <div className="">
                 <p>{company}</p>
                 <p>{title}</p>
                 <p>{desc}</p>
-                <p>{startDate} - {endDate}</p>
+                {endDate ? <p>{startDate} - {endDate}</p> : <p>{startDate}</p>}
             </div>
-
         </section>)
 
 }
@@ -86,7 +79,6 @@ export default function Resume({ personalData, educationData, workData }){
             <PersonalSection data={personalData} />
             <EducationSection data={educationData} />
             <WorkSection data={workData}/>
-
         </div>
     )
 }

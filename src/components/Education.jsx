@@ -61,11 +61,11 @@ export default function Education({ handleUpdate, data }){
                 onChange={handleChange}
                 />
                 <InputField
-                label="Years Attended"
-                id="years"
-                name="years"
-                placeholder="1999-2999"
-                value={data.years}
+                label="Year Graduated"
+                id="year"
+                name="year"
+                placeholder="2999"
+                value={data.year}
                 onChange={handleChange}
                 />
                 <div className="button-div">
