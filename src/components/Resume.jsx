@@ -37,7 +37,7 @@ function PersonalSection({ data }){
 
 function EducationSection({data}){
     const school = data.school;
-    const year= data.years;
+    const year= data.year;
     const major = data.major;
     
     return (

@@ -17,6 +17,7 @@ const blank = {
         startDate: "",
         ednDate: "",
     },
+    list: [],
 };
 
 

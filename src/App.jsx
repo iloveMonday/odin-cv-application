@@ -4,6 +4,7 @@ import Personal from './components/Personal'
 import Education from './components/Education'
 import Work from './components/Work'
 import Resume from './components/Resume'
+import List from './components/ListText'
 
 import { blank } from './data'
 
@@ -11,6 +12,7 @@ export default function App() {
     const [personalData, setPersonalData] = useState(blank.personal)
     const [educationData, setEducationData] = useState(blank.education)
     const [workData, setWorkData] = useState(blank.work)
+    const [listData, setListData] = useState(blank.list)
 
   return (
     <>
@@ -20,6 +22,7 @@ export default function App() {
                 <Personal handleUpdate={setPersonalData} data={personalData} />
                 <Education handleUpdate={setEducationData} data={educationData} />
                 <Work handleUpdate={setWorkData} data={workData} />
+                <List handleUpdate={setListData} data={listData} />
         </div>
         <Resume
             personalData={personalData}
